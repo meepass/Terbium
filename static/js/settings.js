@@ -69,9 +69,10 @@ themeBtns.forEach((btn) => {
 defaultb.addEventListener("click", () => {
     localStorage.setItem("background", "default");
     background.src = "";
-    background.classList.add("bHidden");
+    //background.classList.add("bHidden");
     logoWall.classList.remove("hidden");
-    deskBack.src = `../resources/themePrevs/theme - ${localStorage.getItem("theme")}.png`;
+    //deskBack.src = `../resources/themePrevs/theme - ${localStorage.getItem("theme")}.png`;
+    deskBack.src = `../resources/darkWall.png`;
     if(deskBack.classList.contains("contain")) {
         deskBack.classList.remove("contain");
     }
@@ -82,7 +83,7 @@ dd.addEventListener("keydown", (e) => {
     if(e.keyCode == "13"){
         if(dd.value == "default") {
             background.src = "";
-            background.classList.add("bHidden");
+            //background.classList.add("bHidden");
             logoWall.classList.remove("hidden");
             localStorage.setItem("background", "default");
         } else if(dd.value == "" || !dd.value.includes("https://")) {
@@ -966,7 +967,7 @@ uploadImage.addEventListener("change", () => {
         localStorage.setItem("background", reader.result);
         deskBack.src = reader.result;
         parent.document.querySelector(".background").src = reader.result;
-        parent.document.querySelector(".background").classList.remove("bHidden");
+        //parent.document.querySelector(".background").classList.remove("bHidden");
         parent.document.querySelector(".logoWall").classList.add("hidden");
         if(localStorage.getItem("backF") === "contain") {
             if(!deskBack.classList.contains("contain")) {
@@ -1009,11 +1010,11 @@ importScript.addEventListener("change", () => {
                     case "wallpaper":
                         localStorage.setItem("background", val);
                         document.querySelector("#dd").src = val;
-                        window.parent.document.querySelector(".background").classList.remove("bHidden");
+                        //window.parent.document.querySelector(".background").classList.remove("bHidden");
                         if(val === "default") {
                             document.querySelector(".deskBack").src = `../resources/themePrevs/theme - ${localStorage.getItem("theme")}.png`;
                             window.parent.document.querySelector(".background").src = `../resources/themePrevs/theme - ${localStorage.getItem("theme")}.png`;
-                            window.parent.document.querySelector(".background").classList.add("bHidden");
+                            //window.parent.document.querySelector(".background").classList.add("bHidden");
                             window.parent.document.querySelector(".logoWall").classList.remove("hidden");
                         } else {
                             document.querySelectorAll(".deskBack").src = val;

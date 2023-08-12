@@ -11,19 +11,19 @@ function bd() {
     let query = prompt("Image URL here");
     if(query === "default") {
         document.getElementById("background").src = "";
-        document.getElementById("background").classList.add("bHidden");
+        //document.getElementById("background").classList.add("bHidden");
         logoWall.classList.remove("hidden");
         localStorage.setItem("background", "default");
     } else if(query === "reset") {
         document.getElementById("background").src = "";
-        document.getElementById("background").classList.add("bHidden");
+        //document.getElementById("background").classList.add("bHidden");
         logoWall.classList.remove("hidden");
         localStorage.setItem("background", "default");
     } else if(query) {
         localStorage.setItem("background", `${query}`);
         document.getElementById("background").src=`${query}`;
         document.querySelector(".logoWall").classList.add("hidden");
-        document.getElementById("background").classList.remove("bHidden");
+        //document.getElementById("background").classList.remove("bHidden");
     } 
     if(query == false) {
         return;
@@ -87,14 +87,14 @@ if(!localStorage.getItem("accentShadow")) {
 }
 
 if(!localStorage.getItem("background")) {
-    document.getElementById("background").classList.add("bHidden");
+    //document.getElementById("background").classList.add("bHidden");
     document.querySelector(".logoWall").classList.remove("hidden");
 } else if(localStorage.getItem("background") == "default") {
     document.querySelector(".logoWall").classList.remove("hidden");
-    document.getElementById("background").classList.add("bHidden");
+    //document.getElementById("background").classList.add("bHidden");
 } else if(localStorage.getItem("background")) {
     document.getElementById("background").src=localStorage.getItem("background");
-    document.getElementById("background").classList.remove("bHidden");
+    //document.getElementById("background").classList.remove("bHidden");
     document.querySelector(".logoWall").classList.add("hidden");
 }
 
